@@ -1,0 +1,39 @@
+{
+  "name": "cyberomulus/php-toolbox",
+  "type" : "library",
+  "description": "Simple php toolbox for not to reinvent the wheel!",
+  "keywords" : [
+    "php",
+    "toolbox",
+    "functions"
+  ],
+  "homepage" : "https://github.com/cyberomulus/phpToolbox",
+  "support" : {
+    "email" : "me@cyberomulus.me",
+    "issues" : "https://github.com/cyberomulus/phpToolbox/issues",
+    "source" : "https://github.com/cyberomulus/phpToolbox"
+  },
+  "license" : "MIT",
+  "authors": [
+    {
+      "name" : "Brack Romain",
+      "email" : "me@cyberomulus.me",
+      "homepage" : "http://www.cyberomulus.me"
+    }
+  ],
+  "require" : {
+    "php" : "^5.6 || ^7.0"
+  },
+  "require-dev" : {
+    "phpunit/phpunit" : "^6.1"
+  },
+  "autoload" : {
+    "psr-4" : {
+      "Cyberomulus\\PhpToolbox\\" : "src/"
+    },
+    "exclude-from-classmap" : [
+      "tests/"
+    ]
+  },
+  "minimum-stability" : "dev"
+}
