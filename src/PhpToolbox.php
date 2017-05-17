@@ -19,5 +19,30 @@ namespace Cyberomulus\PhpToolbox;
  */
 class PhpToolbox
 	{
+	/**
+	 * @var	\Cyberomulus\PhpToolbox\Text
+	 * 			This instance contains useful functions for manipulating and verifying text
+	 */
+	private $text;
 
+	/**
+	 * PhpToolbox constructor, initialize all properties.
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function __construct()
+		{
+		$this->text = new Text();
+		}
+
+	/**
+	 * @return \Cyberomulus\PhpToolbox\Text
+	 * 				The instance of class Text (contains useful functions for manipulating and verifying text)
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function getText()
+		{
+		return $this->text;
+		}
 	}

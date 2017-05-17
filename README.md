@@ -28,11 +28,28 @@ Download whith composer :
 
 #### By single class
 
-TODO
+For use a single class, you can simply create an instance to use it.
 
-#### By main class
+For example, use the functions of manipulation and verification of texts:
 
-TODO
+    $textManip = new Cyberomulus\PhpToolbox\Text();
+    $bool = $textManip->startWith("simple example", "example");
+
+#### By main class (for use by service)
+
+If you use a framework, a good practice is to declare this lib as a service.  
+In order not to have to declare as many services as class, a class provider exists: `Cyberomulus\PhpToolbox\PhpToolbox\`.
+
+Once the service is created, you will have access to each class containing the functions:
+
+    $textManip = $this->getService("phpToolBox")->getText();
+    $bool = $textManip->startWith("simple example", "example");
+
+## Class list
+
+* [PhpToolbox](docs/00-PhpToolBox.md) : This class contains a getter for each of the individual classes.
+If you want to use this lib as a framework service, you can declare this class to use a single service
+* [Text](docs/0-text.md) : This class contains useful functions for manipulating and verifying text
 
 ## Documentation
 
@@ -40,11 +57,6 @@ All functions have a phpdoc and doc inline.
 
 In the future, the phpdoc will be available in HTML on my server.  
 In the meantime, your IDE should be able to view phpdoc directly
-
-## Class list
-
-* [PhpToolbox](docs/00-PhpToolBox.md) : This class contains a getter for each of the individual classes.
-If you want to use this lib as a framework service, you can declare this class to use a single service
 
 ## Want more ?
 

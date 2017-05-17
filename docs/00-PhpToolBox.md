@@ -5,4 +5,4 @@ If you want to use this lib as a framework service, you can declare this class t
 
 ## function list
 
-TODO
+* getText() : return an instance of [Cyberomulus\PhpToolbox\Text](01-text.md)
