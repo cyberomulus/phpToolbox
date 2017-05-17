@@ -1,5 +1,7 @@
 # phpToolbox
 
+[![Build Status](https://img.shields.io/travis/cyberomulus/phpToolbox.svg?style=flat-square)](https://travis-ci.org/cyberomulus/phpToolbox)
+
 Simple php toolbox for not to reinvent the wheel!
 
 ## Why this library ?

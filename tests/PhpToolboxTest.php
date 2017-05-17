@@ -14,8 +14,17 @@ use Cyberomulus\PhpToolbox\PhpToolbox;
 use Cyberomulus\PhpToolbox\Text;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test class for Cyberomulus\PhpToolbox\PhpToolbox
+ *
+ * @package	Cyberomulus\PhpToolbox
+ * @author	Brack Romain <http://www.cyberomulus.me>
+ */
 class PhpToolboxTest extends TestCase
 	{
+	/**
+	 * Test all class getters
+	 */
 	public function testGetters()
 		{
 		$phpToolBox = new PhpToolbox();
