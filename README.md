@@ -26,11 +26,11 @@ Download whith composer :
 
 ## How to use ?
 
-##### By single class
+#### By single class
 
 TODO
 
-##### By main class
+#### By main class
 
 TODO
 
@@ -43,15 +43,16 @@ In the meantime, your IDE should be able to view phpdoc directly
 
 ## Class list
 
-todo
+* [PhpToolbox](docs/00-PhpToolBox.md) : This class contains a getter for each of the individual classes.
+If you want to use this lib as a framework service, you can declare this class to use a single service
 
 ## Want more ?
 
-##### You just have to ask
+#### You just have to ask
 
 You can request a new function in [issue](https://github.com/cyberomulus/phpToolbox/issues)
 
-##### Contribute
+#### Contribute
 
 Your pull requests are welcome!!  
 Sharing is the strength of this lib.
