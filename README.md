@@ -51,7 +51,8 @@ Once the service is created, you will have access to each class containing the f
 
 * [PhpToolbox](docs/00-PhpToolBox.md) : This class contains a getter for each of the individual classes.
 If you want to use this lib as a framework service, you can declare this class to use a single service
-* [Text](docs/0-text.md) : This class contains useful functions for manipulating and verifying text
+* [Text](docs/01-text.md) : This class contains useful functions for manipulating and verifying text
+* [IO](docs/02-io.md) : This class contains useful functions for read and write (on filesystem, console, network)
 
 ## Documentation
 
