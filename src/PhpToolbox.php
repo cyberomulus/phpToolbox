@@ -26,6 +26,12 @@ class PhpToolbox
 	private $text;
 
 	/**
+	 * @var \Cyberomulus\PhpToolbox\IO
+	 * 			This instance contains useful functions for read and write (on filesystem, console, network)
+	 */
+	private $io;
+
+	/**
 	 * PhpToolbox constructor, initialize all properties.
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
@@ -33,6 +39,7 @@ class PhpToolbox
 	public function __construct()
 		{
 		$this->text = new Text();
+		$this->io = new IO();
 		}
 
 	/**
@@ -44,5 +51,16 @@ class PhpToolbox
 	public function getText()
 		{
 		return $this->text;
+		}
+
+	/**
+	 * @return \Cyberomulus\PhpToolbox\IO
+	 * 				The instance of class IO (contains useful functions for read and write (on filesystem, console, network)
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function getIO()
+		{
+		return $this->io;
 		}
 	}

@@ -5,4 +5,5 @@ If you want to use this lib as a framework service, you can declare this class t
 
 ## function list
 
-* getText() : return an instance of [Cyberomulus\PhpToolbox\Text](01-text.md)
+* `getText()` : return an instance of [Cyberomulus\PhpToolbox\Text](01-text.md)
+* `getIO()` :  return an instance of [Cyberomulus\PhpToolbox\IO](02-io.md)

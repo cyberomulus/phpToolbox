@@ -10,6 +10,7 @@
 
 namespace Cyberomulus\PhpToolbox\tests;
 
+use Cyberomulus\PhpToolbox\IO;
 use Cyberomulus\PhpToolbox\PhpToolbox;
 use Cyberomulus\PhpToolbox\Text;
 use PHPUnit\Framework\TestCase;
@@ -32,5 +33,9 @@ class PhpToolboxTest extends TestCase
 		// test getter for Text Class
 		$this->assertNotNull($phpToolBox->getText());
 		$this->assertInstanceOf(Text::class, $phpToolBox->getText());
+
+		// test getter for IO class
+		$this->assertNotNull($phpToolBox->getIO());
+		$this->assertInstanceOf(IO::class, $phpToolBox->getIO());
 		}
 	}
