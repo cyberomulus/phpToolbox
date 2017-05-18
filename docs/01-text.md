@@ -1,7 +1,8 @@
-# PhpToolbox class
+# Text class
 
 This class contains useful functions for manipulating and verifying text
 
 ## function list
 
-TODO
+* `startWith($expected, $string, $caseSensitive = true)` : Return true if the string start with expected, else return false
+* `endWith($expected, $string, $caseSensitive = true)` : Return true if the string end with expected, else return false

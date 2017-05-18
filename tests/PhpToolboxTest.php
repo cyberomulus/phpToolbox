@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Test class for Cyberomulus\PhpToolbox\PhpToolbox
  *
- * @package	Cyberomulus\PhpToolbox
+ * @package	Cyberomulus\PhpToolbox\tests
  * @author	Brack Romain <http://www.cyberomulus.me>
  */
 class PhpToolboxTest extends TestCase
