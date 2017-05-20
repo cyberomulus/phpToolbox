@@ -45,7 +45,6 @@ class IOTest extends TestCase
 								"file2.xml",
 								"sub_directory" => array("file3.html",
 														"file4.php",
-														"empty_directory" => array(),
 														"more_directory" => array("file5.css")
 														)
 								);
