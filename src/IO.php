@@ -123,9 +123,51 @@ class IO
 		return rmdir($directory);
 		}
 
+	/**
+	 * Copy file or symlink or recursively copy a folder and its contents
+	 *
+	 * @param	string	$source			Source path
+	 * @param	string	$destination	destination path
+	 * @param	int		$permissions	Permission for new directory
+	 *
+	 * @return bool		true if copied, else false
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function copyFS($source, $destination, $permissions = 0755)
+		{
+		// copy symlink
+		if (is_link($source) == true)
+			return symlink(readlink($source), $destination);
+
+		// copy file
+		if (is_file($source) == true)
+			return copy($source, $destination);
+
+		// Make destination directory if not exist
+		if (is_dir($destination) == false)
+			mkdir($destination, $permissions);
+
+		// open the directory
+		$opened = dir($source);
+
+		// for all file/directory inside
+		while (false !== $entry = $opened->read())
+			{
+			if ($entry == '.' || $entry == '..')
+				continue;
+
+			// recursive copy entry
+			$this->copyFS($source . "/" . $entry, $destination . "/" . $entry, $permissions);
+			}
+
+		$opened->close();
+		return true;
+		}
+
 	// todo function for scan dir in ftp and ssh
 
 	// todo function for remove dir in ftp and ssh
 
-	// todo function for copy dir in fs, ftp and ssh
+	// todo function for copy dir in ftp and ssh
 	}
