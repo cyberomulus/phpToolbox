@@ -88,7 +88,44 @@ class IO
 			throw new \Exception("The directory " . $directory . " does not open");
 		}
 
+	/**
+	 * Remove a directory recursively in a filesystem
+	 *
+	 * @param	string	$directory	Directory to remove
+	 *
+	 * @return	bool	true if directory is removed, else false
+	 *
+	 * @throws	\InvalidArgumentException
+	 * 					If $directory not exist or is not directory
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function rmDirFS($directory)
+		{
+		//  throw an exception is directory does not exist or is not a directory
+		if (file_exists($directory) == false)
+			throw new \InvalidArgumentException("The directory " . $directory . " not exist");
+		if (is_dir($directory) == false)
+			throw new \InvalidArgumentException($directory . " is not a directory");
+
+		// for all file/directory
+		foreach(scandir($directory) as $file)
+			{
+			if ( ($file == '.') || ($file == '..') )
+				continue;
+
+			if (is_dir($directory . "/" . $file) == true)
+				$this->rmDirFS($directory . "/" . $file);
+
+			else
+				unlink($directory . "/" . $file);
+			}
+
+		return rmdir($directory);
+		}
+
 	// todo function for scan dir in ftp and ssh
 
-	// todo function for remove dir in fs, ftp and ssh
+	// todo function for remove dir in ftp and ssh
+
+	// todo function for copy dir in fs, ftp and ssh
 	}
