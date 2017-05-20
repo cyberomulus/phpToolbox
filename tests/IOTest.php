@@ -27,52 +27,11 @@ class IOTest extends TestCase
 	protected $ioClass;
 
 	/**
-	 * create the fixtures
-	 */
-	public static function setUpBeforeClass()
-		{
-		// create a directory for test rmdir function
-		if (file_exists("tests/fixtures/io_rmDirFS/tested") == false)
-			{
-			mkdir("tests/fixtures/io_rmDirFS/tested");
-			touch("tests/fixtures/io_rmDirFS/tested/file.txt");
-			touch("tests/fixtures/io_rmDirFS/tested/file2.txt");
-			mkdir("tests/fixtures/io_rmDirFS/tested/sub_category");
-			touch("tests/fixtures/io_rmDirFS/tested/sub_category/file3.txt");
-			touch("tests/fixtures/io_rmDirFS/tested/sub_category/file4.txt");
-			}
-		}
-
-	/**
 	 * Initialize the tested class
 	 */
 	protected function setUp()
 		{
 		$this->ioClass = new IO();
-		}
-
-	/**
-	 * Test the metod IO::scanDirFS($directory, $recursive)
-	 */
-	public function testScanDirFS()
-		{
-		// test with recurise
-		$testedDirectory = $this->ioClass->scanDirFS("tests/fixtures/io_scanDirFS");
-		$arrayExpected = array( "file.txt",
-								"file2.xml",
-								"sub_directory" => array("file3.html",
-														"file4.php",
-														"more_directory" => array("file5.css")
-														)
-								);
-		$this->assertEquals($arrayExpected, $testedDirectory);
-
-		// test without recursive
-		$testedDirectory = $this->ioClass->scanDirFS("tests/fixtures/io_scanDirFS", false);
-		$arrayExpected = array( "file.txt",
-								"file2.xml"
-								);
-		$this->assertEquals($arrayExpected, $testedDirectory);
 		}
 
 	/**
@@ -97,11 +56,44 @@ class IOTest extends TestCase
 
 	/**
 	 * Test the metod IO::scanDirFS($directory, $recursive)
+	 *
+	 * @depends	testScanDirFS_exceptionNotExist
+	 * @depends testScanDirFS_exceptionNotDirectory
 	 */
-	public function testRmDirFS()
+	public function testScanDirFS()
 		{
-		$this->assertTrue($this->ioClass->rmDirFS("tests/fixtures/io_rmDirFS/tested"));
-		$this->assertDirectoryNotExists("tests/fixtures/io_rmDirFS/tested");
+		// test with recurise
+		$testedDirectory = $this->ioClass->scanDirFS("tests/fixtures/io_scanDirFS");
+		$arrayExpected = array( "file.txt",
+								"file2.xml",
+								"sub_directory" => array("file3.html",
+														"file4.php",
+														"more_directory" => array("file5.css")
+														)
+								);
+		$this->assertEquals($arrayExpected, $testedDirectory);
+
+		// test without recursive
+		$testedDirectory = $this->ioClass->scanDirFS("tests/fixtures/io_scanDirFS", false);
+		$arrayExpected = array( "file.txt",
+								"file2.xml"
+								);
+		$this->assertEquals($arrayExpected, $testedDirectory);
+		}
+
+	/**
+	 * Test the method IO::copyFS($source, $destination, $permissions)
+	 *
+	 * @depends testScanDirFS
+	 */
+	public function testCopyFS()
+		{
+		// test the copy
+		$this->assertTrue($this->ioClass->copyFS("tests/fixtures/io_scanDirFS", "tests/fixtures/io_copyFS"));
+
+		// test if the copy equals original
+		$this->assertEquals($this->ioClass->scanDirFS("tests/fixtures/io_scanDirFS"),
+							$this->ioClass->scanDirFS("tests/fixtures/io_copyFS") );
 		}
 
 	/**
@@ -120,7 +112,20 @@ class IOTest extends TestCase
 	 */
 	public function testRmDirFS_exceptionNotDirectory()
 		{
-		$this->expectExceptionMessage("tests/fixtures/io_rmDirFS/.gitkeep is not a directory");
-		$this->ioClass->scanDirFS("tests/fixtures/io_rmDirFS/.gitkeep");
+		$this->expectExceptionMessage("tests/fixtures/io_scanDirFS/file.txt is not a directory");
+		$this->ioClass->scanDirFS("tests/fixtures/io_scanDirFS/file.txt");
+		}
+
+	/**
+	 * Test the method IO::rmDirFS($directory, $recursive)
+	 *
+	 * @depends testRmDirFS_exceptionNotExist
+	 * @depends testRmDirFS_exceptionNotDirectory
+	 * @depends testCopyFS
+	 */
+	public function testRmDirFS()
+		{
+		$this->assertTrue($this->ioClass->rmDirFS("tests/fixtures/io_copyFS"));
+		$this->assertDirectoryNotExists("tests/fixtures/io_copyFS");
 		}
 	}
