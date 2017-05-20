@@ -53,6 +53,9 @@ class IOTest extends TestCase
 
 	/**
 	 * Test the metod IO::scanDirFS($directory, $recursive)
+	 *
+	 * @depends	testScanDirFS_exceptionNotExist
+	 * @depends testScanDirFS_exceptionNotDirectory
 	 */
 	public function testScanDirFS()
 		{
@@ -97,6 +100,9 @@ class IOTest extends TestCase
 
 	/**
 	 * Test the metod IO::scanDirFS($directory, $recursive)
+	 *
+	 * @depends testRmDirFS_exceptionNotExist
+	 * @depends testRmDirFS_exceptionNotDirectory
 	 */
 	public function testRmDirFS()
 		{
