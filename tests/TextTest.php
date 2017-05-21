@@ -63,7 +63,24 @@ class TextTest extends TestCase
 		}
 
 	/**
+	 * Test the method Text::is_email($string)
+	 */
+	public function testIs_email()
+		{
+		// test with a email
+		$this->assertTrue($this->textClass->is_email("test@test.com"));
+
+		// test without email
+		$this->assertFalse($this->textClass->is_email("no email here"));
+
+		// test with email in more text
+		$this->assertFalse($this->textClass->is_email("this a email : test@test.com"));
+		}
+
+	/**
 	 * Test the method Text::get_emails($string)
+	 *
+	 * @depends testIs_email
 	 */
 	public function testGet_emails()
 		{

@@ -64,11 +64,29 @@ class Text
 		}
 
 	/**
+	 * Check if a string is a email
+	 *
+	 * @param	string	$string		String to be scanned
+	 *
+	 * @return	bool	true if the string is a email, else false
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function is_email($string)
+		{
+		if (filter_var($string, FILTER_VALIDATE_EMAIL) !== false)
+			return true;
+		else
+			return false;
+		}
+
+	/**
 	 * Return an array with emails in string
 	 *
 	 * @param	string	$string		String to be scanned
 	 *
 	 * @return	array|bool			Array with emails in the string, or false if the string not contains email
+	 * @uses	self::is_email()	For check if a word is a email
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
 	 */
@@ -81,7 +99,7 @@ class Text
 		foreach(preg_split('/\s/', $string) as $token)
 			{
 			// add if email
-			if (filter_var($token, FILTER_VALIDATE_EMAIL) !== false)
+			if ($this->is_email($token) == true)
 				$returned[] = $token;
 			}
 
@@ -106,6 +124,4 @@ class Text
 		{
 		return is_array($this->get_emails($string));
 		}
-
-	// todo is_email()
 	}
