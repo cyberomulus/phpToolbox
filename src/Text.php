@@ -62,4 +62,66 @@ class Text
 
 		return substr($string, -strlen($expected)) == $expected;
 		}
+
+	/**
+	 * Check if a string is a email
+	 *
+	 * @param	string	$string		String to be scanned
+	 *
+	 * @return	bool	true if the string is a email, else false
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function is_email($string)
+		{
+		if (filter_var($string, FILTER_VALIDATE_EMAIL) !== false)
+			return true;
+		else
+			return false;
+		}
+
+	/**
+	 * Return an array with emails in string
+	 *
+	 * @param	string	$string		String to be scanned
+	 *
+	 * @return	array|bool			Array with emails in the string, or false if the string not contains email
+	 * @uses	self::is_email()	For check if a word is a email
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function get_emails($string)
+		{
+		// array returned
+		$returned = array();
+
+		// split with space delimiter
+		foreach(preg_split('/\s/', $string) as $token)
+			{
+			// add if email
+			if ($this->is_email($token) == true)
+				$returned[] = $token;
+			}
+
+		// return the array or false
+		if (count($returned) == 0)
+			return false;
+		else
+			return $returned;
+		}
+
+	/**
+	 * Verify if a string contains one or more emails
+	 *
+	 * @param	string	$string		String to be scanned
+	 *
+	 * @return	bool	true if the string contains one or more emails, else false
+	 * @uses	self::get_emails()	For find emails in the string
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function contains_email($string)
+		{
+		return is_array($this->get_emails($string));
+		}
 	}
