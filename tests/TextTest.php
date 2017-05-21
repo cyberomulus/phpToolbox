@@ -67,9 +67,32 @@ class TextTest extends TestCase
 	 */
 	public function testGet_emails()
 		{
-		($this->textClass->get_emails("Find test@test.com and nice@gmail.com"));
-
+		// test find all emails
 		$this->assertEquals(array("test@test.com", "nice@gmail.com"),
 							$this->textClass->get_emails("Find test@test.com and nice@gmail.com"));
+
+		// test with one email only
+		$this->assertEquals(array("test@test.com"),
+							$this->textClass->get_emails("test@test.com"));
+
+		// test without email
+		$this->assertFalse($this->textClass->get_emails("no email"));
+		}
+
+	/**
+	 * Test the method Text::contains_email($string)
+	 *
+	 * @depends testGet_emails
+	 */
+	public function testContains_email()
+		{
+		// test with more emails
+		$this->assertTrue($this->textClass->contains_email("Find test@test.com and nice@gmail.com"));
+
+		// test with one email only
+		$this->assertTrue($this->textClass->contains_email("test@test.com"));
+
+		// test without email
+		$this->assertFalse($this->textClass->contains_email("no email"));
 		}
 	}

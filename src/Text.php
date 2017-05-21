@@ -92,5 +92,20 @@ class Text
 			return $returned;
 		}
 
-	// todo is_email(), contain_email()
+	/**
+	 * Verify if a string contains one or more emails
+	 *
+	 * @param	string	$string		String to be scanned
+	 *
+	 * @return	bool	true if the string contains one or more emails, else false
+	 * @uses	self::get_emails()	For find emails in the string
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function contains_email($string)
+		{
+		return is_array($this->get_emails($string));
+		}
+
+	// todo is_email()
 	}
