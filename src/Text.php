@@ -62,4 +62,35 @@ class Text
 
 		return substr($string, -strlen($expected)) == $expected;
 		}
+
+	/**
+	 * Return an array with emails in string
+	 *
+	 * @param	string	$string		String to be scanned
+	 *
+	 * @return	array|bool			Array with emails in the string, or false if the string not contains email
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function get_emails($string)
+		{
+		// array returned
+		$returned = array();
+
+		// split with space delimiter
+		foreach(preg_split('/\s/', $string) as $token)
+			{
+			// add if email
+			if (filter_var($token, FILTER_VALIDATE_EMAIL) !== false)
+				$returned[] = $token;
+			}
+
+		// return the array or false
+		if (count($returned) == 0)
+			return false;
+		else
+			return $returned;
+		}
+
+	// todo is_email(), contain_email()
 	}

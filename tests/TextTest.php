@@ -61,4 +61,15 @@ class TextTest extends TestCase
 		$this->assertTrue($this->textClass->endWith("nice!", "it's ok, nice!", false));
 		$this->assertTrue($this->textClass->endWith("Nice!", "it's ok, nice!", false));
 		}
+
+	/**
+	 * Test the method Text::get_emails($string)
+	 */
+	public function testGet_emails()
+		{
+		($this->textClass->get_emails("Find test@test.com and nice@gmail.com"));
+
+		$this->assertEquals(array("test@test.com", "nice@gmail.com"),
+							$this->textClass->get_emails("Find test@test.com and nice@gmail.com"));
+		}
 	}
