@@ -62,7 +62,9 @@ class TextTest extends TestCase
 		$this->assertTrue($this->textClass->endWith("Nice!", "it's ok, nice!", false));
 		}
 
-	// todo phpdoc
+	/**
+	 * Test the method to_camelCase($string, $capitalizeFirst)
+	 */
 	public function testTo_camelCase()
 		{
 		// test with no capitalise first character and without special character

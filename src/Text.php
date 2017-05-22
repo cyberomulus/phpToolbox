@@ -63,12 +63,20 @@ class Text
 		return substr($string, -strlen($expected)) == $expected;
 		}
 
-	// todo phpdoc + md
+	/**
+	 * Convert any string in camel case
+	 *
+	 * @param	string	$string				String to convert
+	 * @param	bool	$capitalizeFirst	true for capitalise first letter of string
+	 *
+	 * @return	string	String converted on camel case
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
 	public function to_camelCase($string, $capitalizeFirst = false)
 		{
 		// replace all no alpha and digit by space
 		$string = preg_replace("/[^[:alnum:][:space:]]/u", " ", $string);
-		//$string = str_replace(array("_", "'", ","), " ", $string);
 
 		// capitalize first letter for all words
 		$string = ucwords($string);
@@ -79,7 +87,7 @@ class Text
 		// trim
 		$string = trim($string);
 
-		// lower case for fisrt character
+		// lower case for first character
 		if ($capitalizeFirst == false)
 			$string = lcfirst($string);
 
