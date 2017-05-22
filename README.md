@@ -1,6 +1,7 @@
 # phpToolbox
 
 [![Build Status](https://img.shields.io/travis/cyberomulus/phpToolbox.svg?style=flat-square)](https://travis-ci.org/cyberomulus/phpToolbox)
+[![Coverage Status](https://coveralls.io/repos/github/cyberomulus/phpToolbox/badge.svg?branch=master)](https://coveralls.io/github/cyberomulus/phpToolbox?branch=master)
 
 Simple php toolbox for not to reinvent the wheel!
 
