@@ -53,6 +53,7 @@ Once the service is created, you will have access to each class containing the f
 If you want to use this lib as a framework service, you can declare this class to use a single service
 * [Text](docs/01-text.md) : This class contains useful functions for manipulating and verifying text
 * [IO](docs/02-io.md) : This class contains useful functions for read and write (on filesystem, console, network)
+* [Datetime](docs/03-datetime.md) : This class contains useful functions for manipulate date, time and timezone
 
 ## Documentation
 
