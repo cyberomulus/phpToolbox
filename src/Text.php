@@ -63,6 +63,29 @@ class Text
 		return substr($string, -strlen($expected)) == $expected;
 		}
 
+	// todo phpdoc + md
+	public function to_camelCase($string, $capitalizeFirst = false)
+		{
+		// replace all no alpha and digit by space
+		$string = preg_replace("/[^[:alnum:][:space:]]/u", " ", $string);
+		//$string = str_replace(array("_", "'", ","), " ", $string);
+
+		// capitalize first letter for all words
+		$string = ucwords($string);
+
+		// remove all space
+		$string = str_replace(" ", "", $string);
+
+		// trim
+		$string = trim($string);
+
+		// lower case for fisrt character
+		if ($capitalizeFirst == false)
+			$string = lcfirst($string);
+
+		return $string;
+		}
+
 	/**
 	 * Check if a string is a email
 	 *
