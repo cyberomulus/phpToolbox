@@ -18,5 +18,17 @@ namespace Cyberomulus\PhpToolbox;
  */
 class Datetime
 	{
-	
+	/**
+	 * Verify if timezone is valid
+	 *
+	 * @param	string	$timezone	timezone to tested is valid
+	 *
+	 * @return	bool	true if timezone is valid, else false
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function isTimezone($timezone)
+		{
+		return in_array($timezone, \DateTimeZone::listIdentifiers());
+		}
 	}
