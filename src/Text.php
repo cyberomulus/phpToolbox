@@ -64,6 +64,37 @@ class Text
 		}
 
 	/**
+	 * Convert any string in camel case
+	 *
+	 * @param	string	$string				String to convert
+	 * @param	bool	$capitalizeFirst	true for capitalise first letter of string
+	 *
+	 * @return	string	String converted on camel case
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function to_camelCase($string, $capitalizeFirst = false)
+		{
+		// replace all no alpha and digit by space
+		$string = preg_replace("/[^[:alnum:][:space:]]/u", " ", $string);
+
+		// capitalize first letter for all words
+		$string = ucwords($string);
+
+		// remove all space
+		$string = str_replace(" ", "", $string);
+
+		// trim
+		$string = trim($string);
+
+		// lower case for first character
+		if ($capitalizeFirst == false)
+			$string = lcfirst($string);
+
+		return $string;
+		}
+
+	/**
 	 * Check if a string is a email
 	 *
 	 * @param	string	$string		String to be scanned

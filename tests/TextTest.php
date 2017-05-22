@@ -63,6 +63,27 @@ class TextTest extends TestCase
 		}
 
 	/**
+	 * Test the method to_camelCase($string, $capitalizeFirst)
+	 */
+	public function testTo_camelCase()
+		{
+		// test with no capitalise first character and without special character
+		$this->assertEquals("itIsGood", $this->textClass->to_camelCase("It is good"));
+
+		// test with capitalise first character and without special character
+		$this->assertEquals("ItIsGood", $this->textClass->to_camelCase("it is good", true));
+
+		// test with no capitalise first character and with special character
+		$this->assertEquals("itSGoodVeryNiceNice", $this->textClass->to_camelCase(" It's good, very nice_nice !!"));
+
+		// test with capitalise first character and with special character
+		$this->assertEquals("ItSGoodVeryNiceNice", $this->textClass->to_camelCase(" It's good, very nice_nice !!", true));
+
+		// test with more special character
+		$this->assertEquals("NiceNice", $this->textClass->to_camelCase(" nice @ & | ' ( § ! { } ) - _ = + % \ >< nice", true));
+		}
+
+	/**
 	 * Test the method Text::is_email($string)
 	 */
 	public function testIs_email()
