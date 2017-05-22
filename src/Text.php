@@ -64,6 +64,30 @@ class Text
 		}
 
 	/**
+	 * Create a random string
+	 *
+	 * @param	int		$length		Length of string returned
+	 * @param	string	$chars		List of chars authorized
+	 *
+	 * @return	string	String		Random string with length and characters defined
+	 */
+	public function random($length = 10, $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')
+		{
+		// throw if length is not a int
+		if (is_int($length) == false)
+			throw new \InvalidArgumentException($length . " is not a int");
+
+		// number of chars and string returned
+		$chars_len = strlen($chars);
+		$returned = '';
+
+		for ($i = 0; $i < $length; $i++)
+			$returned .= substr($chars, rand(0, $chars_len - 1), 1);
+
+		return $returned;
+		}
+
+	/**
 	 * Convert any string in camel case
 	 *
 	 * @param	string	$string				String to convert

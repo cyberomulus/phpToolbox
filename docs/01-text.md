@@ -6,6 +6,7 @@ This class contains useful functions for manipulating and verifying text
 
 * `startWith($expected, $string, $caseSensitive = true)` : Return true if the string start with expected, else return false
 * `endWith($expected, $string, $caseSensitive = true)` : Return true if the string end with expected, else return false
+* `random($length = 10, $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')` : Create a random string
 * `to_camelCase($string, $capitalizeFirst = false)` : Convert any string in camel case
 * `is_email($string)` : Check if a string is a email
 * `get_emails($string)` : Return an array with emails in string
