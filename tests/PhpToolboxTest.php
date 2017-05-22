@@ -10,6 +10,7 @@
 
 namespace Cyberomulus\PhpToolbox\tests;
 
+use Cyberomulus\PhpToolbox\Datetime;
 use Cyberomulus\PhpToolbox\IO;
 use Cyberomulus\PhpToolbox\PhpToolbox;
 use Cyberomulus\PhpToolbox\Text;
@@ -37,5 +38,9 @@ class PhpToolboxTest extends TestCase
 		// test getter for IO class
 		$this->assertNotNull($phpToolBox->getIO());
 		$this->assertInstanceOf(IO::class, $phpToolBox->getIO());
+
+		// test getter for Datetime class
+		$this->assertNotNull($phpToolBox->getDatetime());
+		$this->assertInstanceOf(Datetime::class, $phpToolBox->getDatetime());
 		}
 	}

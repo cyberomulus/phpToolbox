@@ -32,6 +32,12 @@ class PhpToolbox
 	private $io;
 
 	/**
+	 * @var \Cyberomulus\PhpToolbox\Datetime
+	 * 			This instance contains useful functions for manipulate date, time and timezone
+	 */
+	private $datetime;
+
+	/**
 	 * PhpToolbox constructor, initialize all properties.
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
@@ -40,6 +46,7 @@ class PhpToolbox
 		{
 		$this->text = new Text();
 		$this->io = new IO();
+		$this->datetime = new Datetime();
 		}
 
 	/**
@@ -62,5 +69,14 @@ class PhpToolbox
 	public function getIO()
 		{
 		return $this->io;
+		}
+
+	/**
+	 * @return \Cyberomulus\PhpToolbox\Datetime
+	 * 				The instance of class Datetime (useful functions for manipulate date, time and timezone)
+	 */
+	public function getDatetime()
+		{
+		return $this->datetime;
 		}
 	}
