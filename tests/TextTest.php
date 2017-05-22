@@ -63,6 +63,30 @@ class TextTest extends TestCase
 		}
 
 	/**
+	 * Test if the exception has returned in the method Text::random($length, $chars)
+	 * if length is not a int
+	 */
+	public function testRandom_exceptionNotInt()
+		{
+		$this->expectExceptionMessage("test is not a int");
+		$this->textClass->random("test");
+		}
+
+	/**
+	 * Test the method Text::random($length, $chars)
+	 *
+	 * @depends testRandom_exceptionNotInt
+	 */
+	public function testRandom()
+		{
+		// test with no parameter
+		$this->assertEquals(1, preg_match("#^[a-zA-Z0-9]{10}$#", $this->textClass->random()));
+
+		// test with parameter
+		$this->assertEquals(1, preg_match("#^[niceForThisTest123_-]{100}$#", $this->textClass->random(100, "niceForThisTest123_-")));
+		}
+
+	/**
 	 * Test the method to_camelCase($string, $capitalizeFirst)
 	 */
 	public function testTo_camelCase()

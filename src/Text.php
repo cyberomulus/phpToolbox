@@ -70,8 +70,6 @@ class Text
 	 * @param	string	$chars		List of chars authorized
 	 *
 	 * @return	string	String		Random string with length and characters defined
-	 *
-	 * todo phpdoc + md
 	 */
 	public function random($length = 10, $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')
 		{
