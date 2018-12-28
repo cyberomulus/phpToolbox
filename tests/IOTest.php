@@ -79,7 +79,7 @@ class IOTest extends TestCase
 		$this->assertEquals(2, count($testedDirectory));
 		$this->assertEquals(2, count($testedDirectory, COUNT_RECURSIVE));
 		$this->assertTrue(in_array("file.txt", $testedDirectory));
-		$this->assertTrue(in_array("file2.xml", $testedDirectory));
+		}
 
 	/**
 	 * Test the method IO::copyFS($source, $destination, $permissions)
