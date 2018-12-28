@@ -64,6 +64,16 @@ class IOTest extends TestCase
 		{
 		// test with recurise
 		$testedDirectory = $this->ioClass->scanDirFS("tests/fixtures/io_scanDirFS");
+		$this->assertEquals(3, count($testedDirectory));
+		$this->assertEquals(7, count($testedDirectory, COUNT_RECURSIVE));
+		$this->assertTrue(in_array("file.txt", $testedDirectory));
+		$this->assertTrue(in_array("file2.xml", $testedDirectory));
+		$this->assertTrue(array_key_exists("sub_directory", $testedDirectory));
+		$this->assertTrue(in_array("file3.html", $testedDirectory["sub_directory"]));
+		$this->assertTrue(in_array("file4.php", $testedDirectory["sub_directory"]));
+		$this->assertTrue(array_key_exists("more_directory", $testedDirectory["sub_directory"]));
+		$this->assertTrue(in_array("file5.css", $testedDirectory["sub_directory"]["more_directory"]));
+		/*
 		$arrayExpected = array( "file.txt",
 								"file2.xml",
 								"sub_directory" => array("file3.html",
@@ -71,14 +81,21 @@ class IOTest extends TestCase
 														"more_directory" => array("file5.css")
 														)
 								);
-		$this->assertEquals($arrayExpected, $testedDirectory);
+		/$this->assertEquals($arrayExpected, $testedDirectory);
+		 */
 
 		// test without recursive
 		$testedDirectory = $this->ioClass->scanDirFS("tests/fixtures/io_scanDirFS", false);
+		$this->assertEquals(2, count($testedDirectory));
+		$this->assertEquals(2, count($testedDirectory, COUNT_RECURSIVE));
+		$this->assertTrue(in_array("file.txt", $testedDirectory));
+		$this->assertTrue(in_array("file2.xml", $testedDirectory));
+		/*
 		$arrayExpected = array( "file.txt",
 								"file2.xml"
 								);
 		$this->assertEquals($arrayExpected, $testedDirectory);
+		*/
 		}
 
 	/**
