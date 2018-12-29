@@ -58,7 +58,6 @@ If you want to use this lib as a framework service, you can declare this class t
 
 ## Documentation
 
-See the directory "docs" for the Class and methods's list
 All functions have a phpdoc and doc inline.
 
 ## Want more ?
