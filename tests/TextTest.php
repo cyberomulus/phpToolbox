@@ -157,4 +157,26 @@ class TextTest extends TestCase
 		// test without email
 		$this->assertFalse($this->textClass->contains_email("no email"));
 		}
+    
+	public function testIsValidSructuredCommunication()
+	   {
+	   // test bad length
+	   $this->assertFalse($this->textClass->isValidSructuredCommunication("123456789123456"));
+	   $this->assertFalse($this->textClass->isValidSructuredCommunication(123456789123456));
+	   
+	   // test good structure
+	   $this->assertTrue($this->textClass->isValidSructuredCommunication("618326144938"));
+	   $this->assertTrue($this->textClass->isValidSructuredCommunication(618326144938));
+	   $this->assertTrue($this->textClass->isValidSructuredCommunication("434809819052"));
+	   $this->assertTrue($this->textClass->isValidSructuredCommunication(434809819052));
+	   
+	   // test bad structure
+	   $this->assertFalse($this->textClass->isValidSructuredCommunication("489627851425"));
+	   $this->assertFalse($this->textClass->isValidSructuredCommunication(489627851425));
+	   $this->assertFalse($this->textClass->isValidSructuredCommunication("458965214782"));
+	   $this->assertFalse($this->textClass->isValidSructuredCommunication(458951235877));
+	   
+	   // test good structure with int inferior to 12 numbers
+	   $this->assertTrue($this->textClass->isValidSructuredCommunication(9801));
+	   }
 	}
