@@ -183,7 +183,7 @@ class Text
     /**
      * Verify if a string or int is a valid structured communication
      * 
-     * @param   mixed   $string     String or int to be tested
+     * @param   string|int  $string     String or int to be tested
      * 
      * @return  bool    true if the string is a valid structured communication
      * 
@@ -194,9 +194,12 @@ class Text
 	    // to string if int
     	$string = strval($string);
     	
-    	// a valis tructure is 10 + 2 numbers
-    	if (strlen($string) != 12)
-    	    return false;
+    	if (strlen($string) > 12)
+    	   return false;
+    	
+    	// add 0 before is the string < 12 
+        while (strlen($string) < 0)
+            $string = "0" . $string;
     	
     	// modulo on first part
     	$modulo = intval(substr($string, 0, -2)) % 97;
