@@ -170,7 +170,7 @@ class Text
 	 *
 	 * @param	string	$string		String to be scanned
 	 *
-	 * @return	bool	true if the string contains one or more emails, else false
+	 * @return	bool	            true if the string contains one or more emails, else false
 	 * @uses	self::get_emails()	For find emails in the string
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
@@ -179,4 +179,31 @@ class Text
 		{
 		return is_array($this->get_emails($string));
 		}
+	
+    /**
+     * Verify if a string or int is a valid structured communication
+     * 
+     * @param   mixed   $string     String or int to be tested
+     * 
+     * @return  bool    true if the string is a valid structured communication
+     * 
+     * @author	Brack Romain <http://www.cyberomulus.me>
+     */
+	public function isValidSructuredCommunication($string)
+    	{
+	    // to string if int
+    	$string = strval($string);
+    	
+    	// a valis tructure is 10 + 2 numbers
+    	if (strlen($string) != 12)
+    	    return false;
+    	
+    	// modulo on first part
+    	$modulo = intval(substr($string, 0, -2)) % 97;
+    	if ($modulo == 0)
+    	    $modulo = 97;
+    	
+    	// check if moulo is equal to expected
+    	return ($modulo == intval(substr($string, -2)) ? true : false);
+    	}
 	}
