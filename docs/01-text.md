@@ -11,3 +11,4 @@ This class contains useful functions for manipulating and verifying text
 * `is_email($string)` : Check if a string is a email
 * `get_emails($string)` : Return an array with emails in string
 * `contains_email($string)` : Verify if a string contains one or more emails
+* `isValidSructuredCommunication($string)` : Verify if a string (or int) is a valid structured communication

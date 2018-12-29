@@ -58,10 +58,8 @@ If you want to use this lib as a framework service, you can declare this class t
 
 ## Documentation
 
+See the directory "docs" for the Class and methods's list
 All functions have a phpdoc and doc inline.
-
-In the future, the phpdoc will be available in HTML on my server.  
-In the meantime, your IDE should be able to view phpdoc directly
 
 ## Want more ?
 

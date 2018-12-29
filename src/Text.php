@@ -181,7 +181,7 @@ class Text
 		}
 	
     /**
-     * Verify if a string or int is a valid structured communication
+     * Verify if a string (or int) is a valid structured communication
      * 
      * @param   string|int  $string     String or int to be tested
      * 
