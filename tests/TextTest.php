@@ -158,6 +158,9 @@ class TextTest extends TestCase
 		$this->assertFalse($this->textClass->contains_email("no email"));
 		}
     
+	/**
+	 * Test the method Text::isValidSructuredCommunication($string)
+	 */
 	public function testIsValidSructuredCommunication()
 	   {
 	   // test bad length
@@ -179,4 +182,17 @@ class TextTest extends TestCase
 	   // test good structure with int inferior to 12 numbers
 	   $this->assertTrue($this->textClass->isValidSructuredCommunication(9801));
 	   }
-	}
+	
+	/**
+	 * Test the method Text::isValidSructuredCommunication($string)
+	 */
+    public function testIsIbanStructure()
+	   {
+       // test bad Iban
+       $this->assertFalse($this->textClass->isIbanStructure("GB87BARC20678541971655"));
+       
+       // test good Iban
+       $this->assertTrue($this->textClass->isIbanStructure("BE43068999999501"));
+       $this->assertTrue($this->textClass->isIbanStructure("BE60750651355970"));
+       }
+    }

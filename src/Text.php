@@ -226,14 +226,14 @@ class Text
         $alphabet = array( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j','k', 'l', 'm',
                             'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
         
-        // move 4 first carcteres at the end
-        $iban = substr($iban, 4) . substr($iban, 0, 4);
+        // move 4 first caracteres at the end
+        $ibanModified = substr($iban, 4) . substr($iban, 0, 4);
         
         // change letter in numeric
         foreach ($alphabet as $letter)
-            str_replace($letter, array_search($letter, $alphabet)+10, $iban);
+            $ibanModified = str_replace($letter, array_search($letter, $alphabet)+10, $ibanModified);
         
-        // check if modulo on iiban modified is 1
-        return intval($iban) % 97 == 1 ? true : false;
+        // check if modulo on iban modified is 1
+        return intval($ibanModified) % 97 == 1 ? true : false;
         }
     }
