@@ -206,7 +206,34 @@ class Text
     	if ($modulo == 0)
     	    $modulo = 97;
     	
-    	// check if moulo is equal to expected
+    	// check if modulo is equal to expected
     	return ($modulo == intval(substr($string, -2)) ? true : false);
     	}
-	}
+	
+  	/**
+   	 * Verify if a string is a valid Iban structure
+   	 *
+   	 * @param   string  $iban     String to be tested
+   	 *
+   	 * @return  bool    true if the string is a valid Iban structure
+   	 *
+   	 * @author	Brack Romain <http://www.cyberomulus.me>
+   	 */
+    public function isIbanStructure($iban)
+        {
+        // prepare code for transform
+        $iban = strtolower($iban);        
+        $alphabet = array( 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j','k', 'l', 'm',
+                            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z');
+        
+        // move 4 first carcteres at the end
+        $iban = substr($iban, 4) . substr($iban, 0, 4);
+        
+        // change letter in numeric
+        foreach ($alphabet as $letter)
+            str_replace($letter, array_search($letter, $alphabet)+10, $iban);
+        
+        // check if modulo on iiban modified is 1
+        return intval($iban) % 97 == 1 ? true : false;
+        }
+    }
