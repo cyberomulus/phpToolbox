@@ -5,6 +5,10 @@ php:
   - '7.1'
   - '7.2'
   - hhvm
-install: composer update --prefer-dist --no-interaction
+install: 
+    - curl -s http://getcomposer.org/installer | php
+    - composer install --dev --prefer-dist --no-interaction
+script:
+    - php vendor/bin/phpunit -c phpunit.xml.dist
 after_success:
-  - php vendor/bin/coveralls -v
+    - travis_retry php vendor/bin/php-coveralls -v
