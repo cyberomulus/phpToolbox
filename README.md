@@ -25,7 +25,7 @@ You can use a single class with a simple `new classOne()` or access the differen
 
 Download whith composer :
 
-    composer require cyberomulus/php-toolbox
+    composer require cyberomulus/php-toolbox:1.*
 
 ## How to use ?
 
@@ -47,6 +47,8 @@ Once the service is created, you will have access to each class containing the f
 
     $textManip = $this->getService("phpToolBox")->getText();
     $bool = $textManip->startWith("simple example", "example");
+
+If you use Symfony >4.0 you can use the bundle [cyberomulus/phpToolboxBundle](https://github.com/cyberomulus/phpToolboxBundle) for inject this class in a service.
 
 ## Class list
 
@@ -70,6 +72,10 @@ You can request a new function in [issue](https://github.com/cyberomulus/phpTool
 
 Your pull requests are welcome!!  
 Sharing is the strength of this lib.
+
+Please read [branches schema](BRANCHES.md) and simply:
+* fork from `master`
+* create pull request to `master`
 
 ## Contributors
 
