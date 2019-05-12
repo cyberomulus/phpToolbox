@@ -117,7 +117,39 @@ class Text
 
 		return $string;
 		}
-
+	
+	/**
+	 * Split a camel case to words
+	 *
+	 * @param   string  $string				String to convert
+	 * @param	bool	$capitalizeFirst	true for capitalise first letter of first word
+	 *
+	 * @return	string	Camel case splitted
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function from_camelCase($string, $capitalizeFirst = false)
+		{
+		// split string at each capitals
+		$words = preg_split("/(?=[A-Z])/", $string, null, PREG_SPLIT_DELIM_CAPTURE);
+		
+		// create string with space
+		$string = "";
+		foreach ($words as $word)
+			{
+			$string = $string . " " . $word;
+			}
+		
+		// to lower case and trim
+		$string = strtolower($string);
+		$string = trim($string);
+		
+		if ($capitalizeFirst == true)
+			$string = ucfirst($string);
+		
+		return $string;
+		}
+	
 	/**
 	 * Check if a string is a email
 	 *
