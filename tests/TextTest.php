@@ -124,7 +124,19 @@ class TextTest extends TestCase
 		// test with capitalise first character of first word and with special character
 		$this->assertEquals("It is good(nice)", $this->textClass->from_camelCase("itIsGood(nice)", true));
 		}
-
+	
+	/**
+	 * Test the method to_snakeCase($string)
+	 */
+	public function testTo_snakeCase()
+		{
+		// test without special character
+		$this->assertEquals("it_is_good", $this->textClass->to_snakeCase("It is good"));
+		
+		// test with special character
+		$this->assertEquals("it_s_good_very_nice_nice", $this->textClass->to_snakeCase(" It's good, very nice_nice !!"));
+		}
+	
 	/**
 	 * Test the method Text::is_email($string)
 	 */

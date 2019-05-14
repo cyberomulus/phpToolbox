@@ -152,6 +152,34 @@ class Text
 		}
 	
 	/**
+	 * Convert any string in snake_case.
+	 * Delete all no alpha and digit
+	 *
+	 * @param string	$string		String to convert
+	 *
+	 * @return	string	String converted on snake case
+	 *
+	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 */
+	public function to_snakeCase($string)
+		{
+		// replace all no alpha and digit by space
+		$string = preg_replace("/[^[:alnum:][:space:]]/u", " ", $string);
+		
+		// replace double space by simple space
+		$string = preg_replace("/\s{2,}/", " ", $string, -1);
+		
+		// convert all string in lower
+		$string = strtolower($string);
+		
+		// trim replace all space by _
+		$string = trim($string);
+		$string = str_replace(" ", "_", $string);
+		
+		return $string;
+		}
+	
+	/**
 	 * Check if a string is a email
 	 *
 	 * @param	string	$string		String to be scanned

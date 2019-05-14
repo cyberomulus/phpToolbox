@@ -9,6 +9,7 @@ This class contains useful functions for manipulating and verifying text
 * `random($length = 10, $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')` : Create a random string
 * `to_camelCase($string, $capitalizeFirst = false)` : Convert any string in camel case (delete all no alpha and digit)
 * `from_camelCase($string, $capitalizeFirst = false)` : Convert a camel case to words
+* `to_snakeCase($string)` : Convert any string in snake_case (delete all no alpha and digit)
 * `is_email($string)` : Check if a string is a email
 * `get_emails($string)` : Return an array with emails in string
 * `contains_email($string)` : Verify if a string contains one or more emails
