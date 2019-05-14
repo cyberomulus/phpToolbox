@@ -88,7 +88,8 @@ class Text
 		}
 
 	/**
-	 * Convert any string in camel case
+	 * Convert any string in camel case.
+	 * Delete all no alpha and digit
 	 *
 	 * @param	string	$string				String to convert
 	 * @param	bool	$capitalizeFirst	true for capitalise first letter of string
