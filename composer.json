@@ -9,15 +9,14 @@
 	],
 	"homepage" : "https://github.com/cyberomulus/phpToolbox",
 	"support" : {
-		"email" : "me@cyberomulus.me",
+		"email" : "cyberomulus.me@gmail.com",
 		"issues" : "https://github.com/cyberomulus/phpToolbox/issues",
 		"source" : "https://github.com/cyberomulus/phpToolbox"
 	},
 	"license" : "MIT",
 	"authors" : [{
 			"name" : "Brack Romain",
-			"email" : "me@cyberomulus.me",
-			"homepage" : "http://www.cyberomulus.me"
+			"email" : "cyberomulus.me@gmail.com"
 		}
 	],
 	"require" : {
