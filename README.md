@@ -19,7 +19,7 @@ You can use a single class with a simple `new classOne()` or access the differen
 
 ## Requirements
 
-* php 7.3 or higher
+* php 7.3 or higher, if you use a lower version see [BRANCHES.md](BRANCHES.md)
 
 ## Installation
 
