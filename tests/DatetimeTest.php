@@ -13,6 +13,12 @@ namespace Cyberomulus\PhpToolbox\tests;
 use Cyberomulus\PhpToolbox\Datetime;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Test class for Cyberomulus\PhpToolbox\DateTime
+ *
+ * @package	Cyberomulus\PhpToolbox\tests
+ * @author	Brack Romain <cyberomulus.me@gmail.com>
+ */
 class DatetimeTest extends TestCase
 	{
 	/**
@@ -23,7 +29,7 @@ class DatetimeTest extends TestCase
 	/**
 	 * Initialize the tested class
 	 */
-	protected function setUp()
+	protected function setUp(): void
 		{
 		$this->datetimeClass = new Datetime();
 		}

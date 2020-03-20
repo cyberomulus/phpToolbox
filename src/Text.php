@@ -14,7 +14,7 @@ namespace Cyberomulus\PhpToolbox;
  * This class contains useful functions for manipulating and verifying text
  *
  * @package Cyberomulus\PhpToolbox
- * @author	Brack Romain <http://www.cyberomulus.me>
+ * @author	Brack Romain <cyberomulus.me@gmail.com>
  */
 class Text
 	{

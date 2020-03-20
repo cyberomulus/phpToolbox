@@ -15,7 +15,7 @@ namespace Cyberomulus\PhpToolbox;
  * If you want to use this lib as a framework service, you can declare this class to use a single service
  *
  * @package	Cyberomulus\PhpToolbox
- * @author	Brack Romain <http://www.cyberomulus.me>
+ * @author	Brack Romain <cyberomulus.me@gmail.com>
  */
 class PhpToolbox
 	{

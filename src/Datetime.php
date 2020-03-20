@@ -14,7 +14,7 @@ namespace Cyberomulus\PhpToolbox;
  * This class contains useful functions for manipulate date, time and timezone
  *
  * @package Cyberomulus\PhpToolbox
- * @author	Brack Romain <http://www.cyberomulus.me>
+ * @author	Brack Romain <cyberomulus.me@gmail.com>
  */
 class Datetime
 	{

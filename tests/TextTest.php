@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
  * Test class for Cyberomulus\PhpToolbox\Text
  *
  * @package	Cyberomulus\PhpToolbox\tests
- * @author	Brack Romain <http://www.cyberomulus.me>
+ * @author	Brack Romain <cyberomulus.me@gmail.com>
  */
 class TextTest extends TestCase
 	{
@@ -29,7 +29,7 @@ class TextTest extends TestCase
 	/**
 	 * Initialise the tested class
 	 */
-	protected function setUp()
+	protected function setUp(): void
 		{
 		$this->textClass = new Text();
 		}

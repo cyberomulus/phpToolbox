@@ -14,7 +14,7 @@ namespace Cyberomulus\PhpToolbox;
  * This class contains useful functions for read and write (on filesystem, console, network)
  *
  * @package Cyberomulus\PhpToolbox
- * @author	Brack Romain <http://www.cyberomulus.me>
+ * @author	Brack Romain <cyberomulus.me@gmail.com>
  */
 class IO
 	{

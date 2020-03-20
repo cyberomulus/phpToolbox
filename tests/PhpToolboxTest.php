@@ -20,7 +20,7 @@ use PHPUnit\Framework\TestCase;
  * Test class for Cyberomulus\PhpToolbox\PhpToolbox
  *
  * @package	Cyberomulus\PhpToolbox\tests
- * @author	Brack Romain <http://www.cyberomulus.me>
+ * @author	Brack Romain <cyberomulus.me@gmail.com>
  */
 class PhpToolboxTest extends TestCase
 	{

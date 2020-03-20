@@ -17,7 +17,7 @@ use PHPUnit\Framework\TestCase;
  * Test class for Cyberomulus\PhpToolbox\IO
  *
  * @package	Cyberomulus\PhpToolbox\tests
- * @author	Brack Romain <http://www.cyberomulus.me>
+ * @author	Brack Romain <cyberomulus.me@gmail.com>
  */
 class IOTest extends TestCase
 	{
@@ -29,7 +29,7 @@ class IOTest extends TestCase
 	/**
 	 * Initialize the tested class
 	 */
-	protected function setUp()
+	protected function setUp(): void
 		{
 		$this->ioClass = new IO();
 		}
