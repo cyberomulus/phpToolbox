@@ -29,7 +29,7 @@ class Text
 	 * @return	bool	true if the string start with expected, else return false
 	 * @author	Brack Romain <http://www.cyberomulus.me>
 	 */
-	public function startWith($expected, $string, $caseSensitive = true)
+	public function startWith($expected, $string, $caseSensitive = true): bool
 		{
 		if ($caseSensitive == false)
 			{
@@ -52,7 +52,7 @@ class Text
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
 	 */
-	public function endWith($expected, $string, $caseSensitive = true)
+	public function endWith($expected, $string, $caseSensitive = true): bool
 		{
 		if ($caseSensitive == false)
 			{
@@ -71,7 +71,7 @@ class Text
 	 *
 	 * @return	string	String		Random string with length and characters defined
 	 */
-	public function random($length = 10, $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789')
+	public function random($length = 10, $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'): string
 		{
 		// throw if length is not a int
 		if (is_int($length) == false)
@@ -98,7 +98,7 @@ class Text
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
 	 */
-	public function to_camelCase($string, $capitalizeFirst = false)
+	public function to_camelCase($string, $capitalizeFirst = false): string
 		{
 		// replace all no alpha and digit by space
 		$string = preg_replace("/[^[:alnum:][:space:]]/u", " ", $string);
@@ -129,7 +129,7 @@ class Text
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
 	 */
-	public function from_camelCase($string, $capitalizeFirst = false)
+	public function from_camelCase($string, $capitalizeFirst = false): string
 		{
 		// split string at each capitals
 		$words = preg_split("/(?=[A-Z])/", $string, null, PREG_SPLIT_DELIM_CAPTURE);
@@ -161,7 +161,7 @@ class Text
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
 	 */
-	public function to_snakeCase($string)
+	public function to_snakeCase($string): string
 		{
 		// replace all no alpha and digit by space
 		$string = preg_replace("/[^[:alnum:][:space:]]/u", " ", $string);
@@ -188,7 +188,7 @@ class Text
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
 	 */
-	public function is_email($string)
+	public function is_email($string): bool
 		{
 		if (filter_var($string, FILTER_VALIDATE_EMAIL) !== false)
 			return true;
@@ -205,6 +205,8 @@ class Text
 	 * @uses	self::is_email()	For check if a word is a email
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
+	 * 
+	 * @todo	Use multiple return type declartion with PHP 8
 	 */
 	public function get_emails($string)
 		{
@@ -236,7 +238,7 @@ class Text
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
 	 */
-	public function contains_email($string)
+	public function contains_email($string): bool
 		{
 		return is_array($this->get_emails($string));
 		}
@@ -250,7 +252,7 @@ class Text
      * 
      * @author	Brack Romain <http://www.cyberomulus.me>
      */
-	public function isValidSructuredCommunication($string)
+	public function isValidSructuredCommunication($string): bool
     	{
 	    // to string if int
     	$string = strval($string);
@@ -280,7 +282,7 @@ class Text
    	 *
    	 * @author	Brack Romain <http://www.cyberomulus.me>
    	 */
-    public function isIbanStructure($iban)
+    public function isIbanStructure($iban): bool
         {
         // prepare code for transform
         $iban = strtolower($iban);        
