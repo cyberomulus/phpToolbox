@@ -19,13 +19,13 @@ You can use a single class with a simple `new classOne()` or access the differen
 
 ## Requirements
 
-* php 5.6 or higher
+* php 7.3 or higher
 
 ## Installation
 
 Download whith composer :
 
-    composer require cyberomulus/php-toolbox:1.*
+    composer require cyberomulus/php-toolbox:1.2.*
 
 ## How to use ?
 
