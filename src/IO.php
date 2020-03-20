@@ -51,7 +51,7 @@ class IO
 	 * 					If $directory does not open
 	 * @author	Brack Romain <http://www.cyberomulus.me>
 	 */
-	public function scanDirFS($directory, $recursive = true)
+	public function scanDirFS($directory, $recursive = true): array
 		{
 		// throw an exception is directory does not exist or is not a directory
 		if (file_exists($directory) == false)
@@ -99,7 +99,7 @@ class IO
 	 * 					If $directory not exist or is not directory
 	 * @author	Brack Romain <http://www.cyberomulus.me>
 	 */
-	public function rmDirFS($directory)
+	public function rmDirFS($directory): bool
 		{
 		//  throw an exception is directory does not exist or is not a directory
 		if (file_exists($directory) == false)
@@ -134,7 +134,7 @@ class IO
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
 	 */
-	public function copyFS($source, $destination, $permissions = 0755)
+	public function copyFS($source, $destination, $permissions = 0755): bool
 		{
 		// copy symlink
 		if (is_link($source) == true)

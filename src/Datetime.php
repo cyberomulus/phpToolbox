@@ -27,7 +27,7 @@ class Datetime
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
 	 */
-	public function isTimezone($timezone)
+	public function isTimezone($timezone): bool
 		{
 		return in_array($timezone, \DateTimeZone::listIdentifiers());
 		}

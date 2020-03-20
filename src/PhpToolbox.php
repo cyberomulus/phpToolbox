@@ -55,7 +55,7 @@ class PhpToolbox
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
 	 */
-	public function getText()
+	public function getText(): Text
 		{
 		return $this->text;
 		}
@@ -66,7 +66,7 @@ class PhpToolbox
 	 *
 	 * @author	Brack Romain <http://www.cyberomulus.me>
 	 */
-	public function getIO()
+	public function getIO(): IO
 		{
 		return $this->io;
 		}
@@ -75,7 +75,7 @@ class PhpToolbox
 	 * @return \Cyberomulus\PhpToolbox\Datetime
 	 * 				The instance of class Datetime (useful functions for manipulate date, time and timezone)
 	 */
-	public function getDatetime()
+	public function getDatetime(): Datetime
 		{
 		return $this->datetime;
 		}
