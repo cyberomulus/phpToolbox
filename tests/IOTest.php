@@ -126,6 +126,6 @@ class IOTest extends TestCase
 	public function testRmDirFS()
 		{
 		$this->assertTrue($this->ioClass->rmDirFS("tests/fixtures/io_copyFS"));
-		$this->assertDirectoryNotExists("tests/fixtures/io_copyFS");
+		$this->assertDirectoryDoesNotExist("tests/fixtures/io_copyFS");
 		}
 	}

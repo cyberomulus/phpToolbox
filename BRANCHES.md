@@ -32,7 +32,7 @@
 * `1.1` : Use with php version < 7.3
 * `1.2` : Use with php version >= 7.3
 * `1.2.*` : Use with php version >= 7.3, add functions in library (the new functions in `1.3.*` is not insert here)
-* `1.3` : Wil be used for futur major php version with no retro-compatbility 
+* `1.3` : Wil be used for futur major php version with no retro-compatbility, including functions inserted in `1.2.*`
 * `1.3.*` : Wil be used for futur major php version with no retro-compatbility, add functions in library
 
 ## Why like that?
